@@ -1,9 +1,11 @@
 package kr.hs.emirim.dreamorreality
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,6 +30,13 @@ class MainActivity : ComponentActivity() {
             //비밀번호 표시 여부에 따라 EditTex의 InputType 설정 변경
             if(isChecked) pwEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
             else pwEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        }
+
+        //회원가입하기 클릭 이벤트 처리
+        val signUpTextView = findViewById<TextView>(R.id.go_signup)
+        signUpTextView.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
     }
 }
