@@ -102,6 +102,17 @@
         android:maxLength="20"
         android:padding="15dp" />
 
+    <EditText
+        android:id="@+id/signUpEditTextPW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="비밀번호를 다시 입력해 주세요."
+        android:singleLine="true"
+        android:maxLength="20"
+        android:padding="15dp" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
