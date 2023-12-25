@@ -15,6 +15,6 @@ import kr.hs.emirim.dreamorreality.ui.theme.DreamOrRealityTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.signin)
+        setContentView(R.layout.activity_signin)
     }
 }
