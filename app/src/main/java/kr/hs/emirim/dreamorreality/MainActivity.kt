@@ -1,6 +1,9 @@
 package kr.hs.emirim.dreamorreality
 
 import android.os.Bundle
+import android.text.InputType
+import android.widget.CheckBox
+import android.widget.EditText
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,5 +19,15 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
+
+        val pwEditText = findViewById<EditText>(R.id.editTextPassword) //비밀번호 입력 칸의 아이디
+        val showPasswordCheckBox = findViewById<CheckBox>(R.id.show_pw) //체크박스의 아이디
+
+        //CheckBox의 상태 변경 이벤트 처리
+        showPasswordCheckBox.setOnCheckedChangeListener{ buttonView, isChecked ->
+            //비밀번호 표시 여부에 따라 EditTex의 InputType 설정 변경
+            if(isChecked) pwEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            else pwEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        }
     }
 }
