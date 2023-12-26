@@ -46,6 +46,7 @@
         android:textSize="24dp"
         android:textStyle="bold"
         android:textColor="@color/black"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"/>
 
@@ -69,12 +70,13 @@
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:hint="이름을 입력해 주세요."
+        android:background="@drawable/edittext_round_style"
         android:singleLine="true"
         android:maxLength="20"
-        android:padding="15dp" />
+        android:padding="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -93,17 +95,18 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:hint="아이디를 입력해 주세요."
+            android:background="@drawable/edittext_round_style"
             android:singleLine="true"
             android:maxLength="20"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/mainColor"
+            android:background="@drawable/button_style"
             android:text="중복확인"
             android:textColor="@color/white"
             android:layout_marginRight="15dp"/>
@@ -120,23 +123,25 @@
         android:id="@+id/signUpEditTextPW"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:hint="비밀번호를 입력해 주세요."
+        android:background="@drawable/edittext_round_style"
         android:singleLine="true"
         android:maxLength="20"
-        android:padding="15dp" />
+        android:padding="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
 
     <EditText
         android:id="@+id/checkEditTextPW"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:hint="비밀번호를 다시 입력해 주세요."
+        android:background="@drawable/edittext_round_style"
         android:singleLine="true"
         android:maxLength="20"
-        android:padding="15dp" />
+        android:padding="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -145,7 +150,7 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="16dp"
-        android:background="@color/mainColor"
+        android:background="@drawable/button_style"
         android:layout_margin="15dp"/>
 
 </LinearLayout>

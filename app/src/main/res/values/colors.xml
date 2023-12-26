@@ -6,4 +6,5 @@
     <color name="mainColor">#F76707</color>
     <color name="grey">#EAEAEA</color>
     <color name="defaultLetter">#343A41</color>
+    <color name="secondaryColor">#2AC1BC</color>
 </resources>
