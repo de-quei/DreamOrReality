@@ -67,7 +67,7 @@
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/signUpEditTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="이름을 입력해 주세요."
@@ -130,6 +130,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="비밀번호를 입력해 주세요."
+        android:inputType="textPassword"
         android:background="@drawable/edittext_round_style"
         android:singleLine="true"
         android:maxLength="20"
@@ -142,6 +143,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="비밀번호를 다시 입력해 주세요."
+        android:inputType="textPassword"
         android:background="@drawable/edittext_round_style"
         android:singleLine="true"
         android:maxLength="20"
@@ -149,6 +151,7 @@
         android:layout_margin="15dp"/>
 
     <Button
+        android:id="@+id/go_nextBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="다음"
