@@ -10,15 +10,6 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import kr.hs.emirim.dreamorreality.ui.theme.DreamOrRealityTheme
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("MissingInflatedId")
@@ -39,7 +30,7 @@ class MainActivity : ComponentActivity() {
         //회원가입하기 클릭 이벤트 처리
         val signUpTextView = findViewById<TextView>(R.id.go_signup)
         signUpTextView.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java) //회원가입 창으론 넘어간다.
+            val intent = Intent(this, SignUp1Activity::class.java) //회원가입 창으론 넘어간다.
             startActivity(intent)
         }
 
