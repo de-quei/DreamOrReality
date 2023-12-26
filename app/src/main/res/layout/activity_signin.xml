@@ -21,11 +21,12 @@
         android:id="@+id/editTextID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:hint="아이디를 입력해주세요."
+        android:background="@drawable/edittext_round_style"
         android:singleLine="true"
         android:maxLength="20"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:padding="15dp" />
 
     <TextView
@@ -42,12 +43,13 @@
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:hint="비밀번호를 입력해주세요."
+        android:background="@drawable/edittext_round_style"
         android:inputType="textPassword"
         android:singleLine="true"
         android:maxLength="20"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:padding="15dp" />
 
     <CheckBox
