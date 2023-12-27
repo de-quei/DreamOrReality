@@ -210,8 +210,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-
                 <EditText
+                    android:id="@+id/emailEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -266,6 +266,7 @@
                 android:layout_marginTop="30dp"/>
 
             <EditText
+                android:id="@+id/signupEditTextDream"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Ex. 대충하지 않고 무엇이든 이해하는 백엔드 개발자."
