@@ -1,5 +1,6 @@
 package kr.hs.emirim.dreamorreality
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -18,6 +19,7 @@ class SignUpActivity : ComponentActivity() {
         val gradeSpinner: Spinner = findViewById(R.id.gradeSpinner)
         val classSpinner: Spinner = findViewById(R.id.classSpinner)
         val numberSpinner: Spinner = findViewById(R.id.numberSpinner)
+        val emailSpinner: Spinner = findViewById(R.id.emailSpinner)
 
         // 어댑터 생성
         val gradeAdapter = ArrayAdapter.createFromResource(
@@ -35,16 +37,23 @@ class SignUpActivity : ComponentActivity() {
             R.array.number_array,
             android.R.layout.simple_spinner_item
         )
+        val emailAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.email_array,
+            android.R.layout.simple_spinner_item
+        )
 
         // 드롭다운 레이아웃 설정
         gradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         numberAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        emailAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         // 스피너에 어댑터 설정
         gradeSpinner.adapter = gradeAdapter
         classSpinner.adapter = classAdapter
         numberSpinner.adapter = numberAdapter
+        emailSpinner.adapter = emailAdapter
 
         val nextButton = findViewById<Button>(R.id.go_nextBtn)
         nextButton.setOnClickListener {
