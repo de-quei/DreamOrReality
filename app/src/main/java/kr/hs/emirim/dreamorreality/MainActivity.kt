@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
         //회원가입하기 클릭 이벤트 처리
         val signUpTextView = findViewById<TextView>(R.id.go_signup)
         signUpTextView.setOnClickListener {
-            val intent = Intent(this, SignUp1Activity::class.java) //회원가입 창으론 넘어간다.
+            val intent = Intent(this, SignUpActivity::class.java) //회원가입 창으론 넘어간다.
             startActivity(intent)
         }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <!--헤더바-->
@@ -13,31 +13,6 @@
         android:textColor="@color/black"
         android:layout_margin="15dp"
         android:gravity="center"/>
-
-    <!--이미지를 가로로 나열-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="104dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/signup_rec1"/>
-
-        <ImageView
-            android:layout_width="104dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            android:src="@drawable/signup_rec2"/>
-
-        <ImageView
-            android:layout_width="104dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/signup_rec2"/>
-    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -58,97 +33,128 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"/>
 
-    <!--입력란 시작-->
-    <TextView
+    <!--body를 차지하는 Scroll View-->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:text="이름을 입력해 주세요."
-        android:textSize="20dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <EditText
-        android:id="@+id/signUpEditTextName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="이름을 입력해 주세요."
-        android:background="@drawable/edittext_round_style"
-        android:singleLine="true"
-        android:maxLength="20"
-        android:padding="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="30dp"
-        android:text="아이디를 입력해 주세요."
-        android:textSize="20dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/signUpEditTextID"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="아이디를 입력해 주세요."
-            android:background="@drawable/edittext_round_style"
-            android:singleLine="true"
-            android:maxLength="20"
-            android:padding="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="30dp"/>
+            android:orientation="vertical">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_style"
-            android:text="중복확인"
-            android:textColor="@color/white"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
-            android:padding="15dp"/>
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="이름을 입력해 주세요."
+                android:textSize="20dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:text="비밀번호를 입력해 주세요."
-        android:textSize="20dp" />
+            <EditText
+                android:id="@+id/signUpEditTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="이름을 입력해 주세요."
+                android:background="@drawable/edittext_round_style"
+                android:singleLine="true"
+                android:maxLength="20"
+                android:padding="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
 
-    <EditText
-        android:id="@+id/signUpEditTextPW"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="비밀번호를 입력해 주세요."
-        android:inputType="textPassword"
-        android:background="@drawable/edittext_round_style"
-        android:singleLine="true"
-        android:maxLength="20"
-        android:padding="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:text="아이디를 입력해 주세요."
+                android:textSize="20dp" />
 
-    <EditText
-        android:id="@+id/checkEditTextPW"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="비밀번호를 다시 입력해 주세요."
-        android:inputType="textPassword"
-        android:background="@drawable/edittext_round_style"
-        android:singleLine="true"
-        android:maxLength="20"
-        android:padding="15dp"
-        android:layout_margin="15dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/signUpEditTextID"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="아이디를 입력해 주세요."
+                    android:background="@drawable/edittext_round_style"
+                    android:singleLine="true"
+                    android:maxLength="20"
+                    android:padding="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="30dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_style"
+                    android:text="중복확인"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:padding="15dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="비밀번호를 입력해 주세요."
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/signUpEditTextPW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호를 입력해 주세요."
+                android:inputType="textPassword"
+                android:background="@drawable/edittext_round_style"
+                android:singleLine="true"
+                android:maxLength="20"
+                android:padding="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <EditText
+                android:id="@+id/checkEditTextPW"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호를 다시 입력해 주세요."
+                android:inputType="textPassword"
+                android:background="@drawable/edittext_round_style"
+                android:singleLine="true"
+                android:maxLength="20"
+                android:padding="15dp"
+                android:layout_margin="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="성별을 선택해 주세요."
+                android:textSize="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"/>
+
+            <Spinner
+                android:id="@+id/genderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:padding="10dp"
+                android:entries="@array/gender_array"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/go_nextBtn"
@@ -159,9 +165,7 @@
         android:textStyle="bold"
         android:textSize="16dp"
         android:background="@drawable/button_style"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="135dp"
+        android:layout_margin="15dp"
         android:padding="17dp"/>
 
 </LinearLayout>

@@ -2,8 +2,10 @@ package kr.hs.emirim.dreamorreality
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import androidx.activity.ComponentActivity
 
 class SignUpActivity : ComponentActivity() {
@@ -11,9 +13,20 @@ class SignUpActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        val nextButton = findViewById<Button>(R.id.go_nextBtn)
+        // 스피너 초기화
+        val genderSpinner: Spinner = findViewById(R.id.genderSpinner)  // your_layout에 스피너가 있는 경우 해당 ID를 사용해주세요.
+        // 어댑터 초기화
+        val adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.gender_array,
+            android.R.layout.simple_spinner_item
+        )
+        // 드롭다운 레이아웃 설정
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // 스피너에 어댑터 설정
+        genderSpinner.adapter = adapter
 
-        //다음 Button의 이벤트 리스너
+        val nextButton = findViewById<Button>(R.id.go_nextBtn)
         nextButton.setOnClickListener {
             //필요 필드 값을 가져옴.
             val nameEditText = findViewById<EditText>(R.id.signUpEditTextName)

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DreamOrReality</string>
     <string name="title_activity_signin">SigninActivity</string>
+    <string-array name="gender_array">
+        <item>남성</item>
+        <item>여성</item>
+    </string-array>
 </resources>
