@@ -153,7 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:padding="10dp"
+                android:padding="15dp"
                 android:entries="@array/gender_array"/>
 
             <!--학번 입력-->
@@ -176,7 +176,7 @@
                     android:id="@+id/gradeSpinner"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
+                    android:padding="15dp"
                     android:layout_margin="10dp"
                     android:entries="@array/grade_array"/>
                 <Spinner
@@ -184,14 +184,14 @@
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:padding="10dp"
+                    android:padding="15dp"
                     android:entries="@array/class_array"/>
                 <Spinner
                     android:id="@+id/numberSpinner"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:padding="10dp"
+                    android:padding="15dp"
                     android:entries="@array/number_array"/>
             </LinearLayout>
 
@@ -253,7 +253,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:padding="10dp"
+                android:padding="15dp"
                 android:entries="@array/year_array"/>
 
             <TextView
