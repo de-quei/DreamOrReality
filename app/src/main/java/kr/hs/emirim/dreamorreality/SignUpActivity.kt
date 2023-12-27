@@ -6,10 +6,10 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.ComponentActivity
 
-class SignUp1Activity : ComponentActivity() {
+class SignUpActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup1)
+        setContentView(R.layout.activity_signup)
 
         val nextButton = findViewById<Button>(R.id.go_nextBtn)
 
