@@ -1,15 +1,20 @@
 <resources>
     <string name="app_name">DreamOrReality</string>
     <string name="title_activity_signin">SigninActivity</string>
+
     <string-array name="gender_array">
         <item>남성</item>
         <item>여성</item>
+        <item>성별</item>
     </string-array>
+
     <string-array name="grade_array">
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>학년</item>
     </string-array>
+
     <string-array name="class_array">
         <item>1</item>
         <item>2</item>
@@ -17,7 +22,9 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
+        <item>반</item>
     </string-array>
+
     <string-array name="number_array">
         <item>1</item>
         <item>2</item>
@@ -37,11 +44,23 @@
         <item>16</item>
         <item>17</item>
         <item>18</item>
+        <item>번호</item>
     </string-array>
+
     <string-array name="email_array">
         <item>e-mirim.hs.kr</item>
         <item>naver.com</item>
         <item>gmail.com</item>
         <item>daum.net</item>
+        <item>직접 입력</item>
+    </string-array>
+
+    <string-array name="year_array">
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+        <item>2028</item>
+        <item>2029</item>
+        <item>2030</item>
     </string-array>
 </resources>

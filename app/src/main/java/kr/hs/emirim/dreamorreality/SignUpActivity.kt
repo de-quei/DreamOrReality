@@ -10,6 +10,7 @@ import android.widget.Spinner
 import androidx.activity.ComponentActivity
 
 class SignUpActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
@@ -20,6 +21,7 @@ class SignUpActivity : ComponentActivity() {
         val classSpinner: Spinner = findViewById(R.id.classSpinner)
         val numberSpinner: Spinner = findViewById(R.id.numberSpinner)
         val emailSpinner: Spinner = findViewById(R.id.emailSpinner)
+        val yearSpinner : Spinner = findViewById(R.id.yearSpinner)
 
         // 어댑터 생성
         val gradeAdapter = ArrayAdapter.createFromResource(
@@ -42,18 +44,25 @@ class SignUpActivity : ComponentActivity() {
             R.array.email_array,
             android.R.layout.simple_spinner_item
         )
+        val yearAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.year_array,
+            android.R.layout.simple_spinner_item
+        )
 
         // 드롭다운 레이아웃 설정
         gradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         numberAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         emailAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         // 스피너에 어댑터 설정
         gradeSpinner.adapter = gradeAdapter
         classSpinner.adapter = classAdapter
         numberSpinner.adapter = numberAdapter
         emailSpinner.adapter = emailAdapter
+        yearSpinner.adapter = yearAdapter
 
         val nextButton = findViewById<Button>(R.id.go_nextBtn)
         nextButton.setOnClickListener {
