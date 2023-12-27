@@ -13,18 +13,38 @@ class SignUpActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        // 스피너 초기화
-        val genderSpinner: Spinner = findViewById(R.id.genderSpinner)  // your_layout에 스피너가 있는 경우 해당 ID를 사용해주세요.
-        // 어댑터 초기화
-        val adapter = ArrayAdapter.createFromResource(
+        // 각 스피너 초기화
+        val genderSpinner: Spinner = findViewById(R.id.genderSpinner)
+        val gradeSpinner: Spinner = findViewById(R.id.gradeSpinner)
+        val classSpinner: Spinner = findViewById(R.id.classSpinner)
+        val numberSpinner: Spinner = findViewById(R.id.numberSpinner)
+
+        // 어댑터 생성
+        val gradeAdapter = ArrayAdapter.createFromResource(
             this,
-            R.array.gender_array,
+            R.array.grade_array,
             android.R.layout.simple_spinner_item
         )
+        val classAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.class_array,
+            android.R.layout.simple_spinner_item
+        )
+        val numberAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.number_array,
+            android.R.layout.simple_spinner_item
+        )
+
         // 드롭다운 레이아웃 설정
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        gradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        numberAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
         // 스피너에 어댑터 설정
-        genderSpinner.adapter = adapter
+        gradeSpinner.adapter = gradeAdapter
+        classSpinner.adapter = classAdapter
+        numberSpinner.adapter = numberAdapter
 
         val nextButton = findViewById<Button>(R.id.go_nextBtn)
         nextButton.setOnClickListener {

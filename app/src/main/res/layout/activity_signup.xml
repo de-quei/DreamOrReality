@@ -152,6 +152,44 @@
                 android:padding="10dp"
                 android:entries="@array/gender_array"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="학번을 선택해 주세요."
+                android:textSize="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--width 오류 해결하기-->
+                <Spinner
+                    android:id="@+id/gradeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:entries="@array/gender_array"/>
+                <Spinner
+                    android:id="@+id/classSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:entries="@array/gender_array"/>
+                <Spinner
+                    android:id="@+id/numberSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:entries="@array/gender_array"/>
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
