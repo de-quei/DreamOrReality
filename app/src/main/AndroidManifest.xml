@@ -24,7 +24,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUp1Activity"
+            android:name=".SignUpActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.DreamOrReality">
+        </activity>
+        <activity
+            android:name=".ChatActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.DreamOrReality">
