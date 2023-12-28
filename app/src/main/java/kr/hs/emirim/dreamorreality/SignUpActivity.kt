@@ -2,7 +2,9 @@ package kr.hs.emirim.dreamorreality
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -29,9 +31,20 @@ class SignUpActivity : ComponentActivity() {
             handleNextButtonClick()
         }
     }
+
+    //error dialog를 띄우는 메소드
     private fun showErrorDialog(message: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
+        builder.setMessage(message)
+        builder.setPositiveButton("확인", null)
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showSuccessDialog(message: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Success")
         builder.setMessage(message)
         builder.setPositiveButton("확인", null)
         val dialog = builder.create()
@@ -116,6 +129,13 @@ class SignUpActivity : ComponentActivity() {
                     }
                 } catch (e: JSONException) {
                     Log.e("JSONError", "Error parsing JSON: $response")
+                    //json parsing error가 해결될때까지 성공 메세지코드는 여기 위치합니다.
+                    showSuccessDialog("성공적으로 회원가입 되었습니다.")
+                    //실질적으론 확인 버튼을 누르면 넘어가는게 아닌 2초 대기 후 넘어가는 코드
+                    Handler().postDelayed({
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    }, 2000) // 2초 대기
                 }
             },
             Response.ErrorListener { error ->
