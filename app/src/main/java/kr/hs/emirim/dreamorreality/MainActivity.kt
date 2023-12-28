@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.text.InputType
 import android.util.Log
 import android.widget.Button
@@ -81,7 +82,14 @@ class MainActivity : ComponentActivity() {
                         val successMessage = jsonResponse.getString("message")
                         showSuccessDialog(successMessage)
 
-                        // 로그인 성공 후의 동작을 추가하기.
+                        // 응답에서 사용자 데이터 추출
+                        val userData = jsonResponse.getJSONObject("userData")
+                        val username = userData.getString("username")
+
+                        // HomeActivity로 이동하고 사용자 이름을 전달
+                        val intent = Intent(this, HomeActivity::class.java)
+                        intent.putExtra("username", username)
+                        startActivity(intent)
                     }
                 } catch (e: JSONException) {
                     Log.e("JSONError", "Error parsing JSON: $response")
