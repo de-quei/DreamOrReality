@@ -37,17 +37,21 @@ class MainActivity : ComponentActivity() {
         //로그인 버튼 클릭 이벤트 처리
         val signupButton = findViewById<Button>(R.id.signupBtn)
         signupButton.setOnClickListener {
-            //필드 값을 가져옴.
-            val usernameEditText = findViewById<EditText>(R.id.editTextID)
-            val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
-
-            val userId = usernameEditText.text.toString()
-            val userPw = passwordEditText.text.toString()
-
-            //필드가 하나라도 비어있을 때 에러 dialog를 발생시킴
-            if (userId.isEmpty() || userPw.isEmpty()) showErrorDialog("모든 필드를 입력해주세요.");
+            handleSignupButtonClick()
         }
 
+    }
+
+    private fun handleSignupButtonClick() {
+        //필드 값을 가져옴.
+        val usernameEditText = findViewById<EditText>(R.id.editTextID)
+        val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
+
+        val userId = usernameEditText.text.toString()
+        val userPw = passwordEditText.text.toString()
+
+        //필드가 하나라도 비어있을 때 에러 dialog를 발생시킴
+        if (userId.isEmpty() || userPw.isEmpty()) showErrorDialog("모든 필드를 입력해주세요.");
     }
 
     private fun showErrorDialog(message: String) {
