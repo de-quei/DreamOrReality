@@ -5,14 +5,20 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import org.json.JSONException
+import org.json.JSONObject
 
 class MainActivity : ComponentActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
@@ -52,6 +58,62 @@ class MainActivity : ComponentActivity() {
 
         //필드가 하나라도 비어있을 때 에러 dialog를 발생시킴
         if (userId.isEmpty() || userPw.isEmpty()) showErrorDialog("모든 필드를 입력해주세요.");
+        else signinUser(userId, userPw)
+    }
+
+    private fun signinUser(userId: String, userPw: String) {
+        val serverUrl = "http://10.0.2.2/dreamorreality_server/signin.php"
+
+        val requestQueue = Volley.newRequestQueue(this)
+
+        val stringRequest = object : StringRequest(
+            Request.Method.POST,
+            serverUrl,
+            Response.Listener { response ->
+                try {
+                    val jsonResponse = JSONObject(response)
+                    val error = jsonResponse.getBoolean("error")
+
+                    if (error) {
+                        val errorMessage = jsonResponse.getString("message")
+                        showErrorDialog(errorMessage)
+                    } else {
+                        val successMessage = jsonResponse.getString("message")
+                        showSuccessDialog(successMessage)
+
+                        // 로그인 성공 후의 동작을 추가하기.
+                    }
+                } catch (e: JSONException) {
+                    Log.e("JSONError", "Error parsing JSON: $response")
+                    showErrorDialog("서버 응답 처리 중 오류가 발생했습니다.")
+                }
+            },
+            Response.ErrorListener { error ->
+                showErrorDialog("서버 오류가 발생했습니다.")
+            }
+        ) {
+            override fun getBodyContentType(): String {
+                return "application/json; charset=utf-8"
+            }
+
+            override fun getBody(): ByteArray {
+                val jsonParams = JSONObject()
+                jsonParams.put("userid", userId)
+                jsonParams.put("userpw", userPw)
+                return jsonParams.toString().toByteArray()
+            }
+        }
+
+        requestQueue.add(stringRequest)
+    }
+
+    private fun showSuccessDialog(message: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Success")
+        builder.setMessage(message)
+        builder.setPositiveButton("확인", null)
+        val dialog = builder.create()
+        dialog.show()
     }
 
     private fun showErrorDialog(message: String) {
