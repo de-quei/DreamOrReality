@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <!--상단 바-->
@@ -25,10 +26,26 @@
             android:orientation="vertical">
 
             <!--기능 구현...-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="글이 작성되면 보이는 구간"
+                android:layout_margin="15dp"/>
 
         </LinearLayout>
 
     </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="15dp"
+        android:contentDescription="fab_contrent_desc"
+        android:text="+ 글작성"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:backgroundTint="@color/mainColor" />
 
     <!--하단 내비 바-->
     <LinearLayout
