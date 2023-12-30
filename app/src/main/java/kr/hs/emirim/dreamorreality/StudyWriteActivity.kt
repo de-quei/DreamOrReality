@@ -120,6 +120,12 @@ class StudyWriteActivity : ComponentActivity() {
                     }
                 } catch (e: JSONException) {
                     Log.e("JSONError", "Error parsing JSON: $response")
+                    //json parsing error가 해결될때까지 성공 코드는 여기 위치합니다.
+                    showSuccessDialog("등록되었습니다.")
+                    Handler().postDelayed({
+                        val intent = Intent(this, StudyActivity::class.java)
+                        startActivity(intent)
+                    }, 2000) // 2초 대기
                 }
             },
             Response.ErrorListener { error ->
