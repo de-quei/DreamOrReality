@@ -114,7 +114,6 @@
                     android:entries="@array/day_array"
                     android:padding="15dp" />
 
-
             </LinearLayout>
 
             <TextView

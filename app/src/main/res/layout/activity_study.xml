@@ -48,7 +48,7 @@
         android:textSize="16dp"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:background="@drawable/button_style"
+        android:backgroundTint="@color/mainColor"
         tools:ignore="RtlCompat,RtlHardcoded" />
 
     <!--하단 내비 바-->
