@@ -80,7 +80,8 @@ class MainActivity : ComponentActivity() {
                         showErrorDialog(errorMessage)
                     } else {
                         val successMessage = jsonResponse.getString("message")
-                        showSuccessDialog(successMessage)
+                        val username = jsonResponse.getJSONObject("userData").getString("username")
+                        showSuccessDialog(successMessage, username)
 
                         // 로그인 성공 시 HomeActivity로 이동
                         val intent = Intent(this, HomeActivity::class.java)
@@ -110,14 +111,15 @@ class MainActivity : ComponentActivity() {
         requestQueue.add(stringRequest)
     }
 
-    private fun showSuccessDialog(message: String) {
+    private fun showSuccessDialog(message: String, username: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Success")
-        builder.setMessage(message)
+        builder.setMessage("$username 님 $message") // 사용자 이름을 메시지와 결합
         builder.setPositiveButton("확인", null)
         val dialog = builder.create()
         dialog.show()
     }
+
 
     private fun showErrorDialog(message: String) {
         val builder = AlertDialog.Builder(this)
