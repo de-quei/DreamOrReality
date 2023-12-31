@@ -81,15 +81,6 @@ class MainActivity : ComponentActivity() {
                     } else {
                         val successMessage = jsonResponse.getString("message")
                         showSuccessDialog(successMessage)
-
-                        // 응답에서 사용자 데이터 추출
-                        val userData = jsonResponse.getJSONObject("userData")
-                        val username = userData.getString("username")
-
-                        // HomeActivity로 이동하고 사용자 이름을 전달
-                        val intent = Intent(this, HomeActivity::class.java)
-                        intent.putExtra("username", username)
-                        startActivity(intent)
                     }
                 } catch (e: JSONException) {
                     Log.e("JSONError", "Error parsing JSON: $response")
