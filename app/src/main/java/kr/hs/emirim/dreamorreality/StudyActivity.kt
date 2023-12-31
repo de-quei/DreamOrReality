@@ -3,7 +3,9 @@ package kr.hs.emirim.dreamorreality
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.LinearLayout
+import android.widget.ListView
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import com.android.volley.Request
@@ -15,6 +17,8 @@ import org.json.JSONArray
 import org.json.JSONException
 
 class StudyActivity : ComponentActivity() {
+    private lateinit var listView: ListView
+    private lateinit var adapter: ArrayAdapter<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_study)
@@ -24,6 +28,11 @@ class StudyActivity : ComponentActivity() {
             val intent = Intent(this, StudyWriteActivity::class.java)
             startActivity(intent)
         }
+
+        // ListView 초기화 및 어댑터 설정
+        listView = findViewById<ListView>(R.id.contents)
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayListOf<String>())
+        listView.adapter = adapter
 
         fetchDataFromServer()
     }
@@ -60,18 +69,13 @@ class StudyActivity : ComponentActivity() {
 
                 // JSON 객체에서 데이터 추출
                 val title = jsonObject.getString("title")
-                val tag = jsonObject.getString("tag")
                 val content = jsonObject.getString("content")
-                val period = jsonObject.getString("period")
-                val people = jsonObject.getString("people")
-                val limit = jsonObject.getString("limit")
 
                 // 가져온 데이터로 UI 업데이트
                 val textView = TextView(this)
 
-                textView.text = "제목: $title\n태그: $tag\n 내용: $content\n 기간: $period\n 인원: $people\n 제한사항: $limit\n\n"
-                // LinearLayout에 TextView 추가
-                findViewById<LinearLayout>(R.id.contentLayout).addView(textView)
+                val itemText = "제목: $title\n내용: $content"
+                adapter.add(itemText)
             }
         } catch (e: JSONException) {
             Log.e("JSONError", "JSON 파싱 오류: $response")

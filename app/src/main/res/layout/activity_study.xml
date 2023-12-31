@@ -15,28 +15,13 @@
         android:textSize="16dp"
         android:layout_margin="15dp"/>
 
-    <!--body를 차지하는 Scroll View-->
-    <ScrollView
+    <!--body를 차지하는 List View-->
+    <ListView
+        android:id="@+id/contents"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"/>
 
-        <LinearLayout
-            android:id="@+id/contentLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!--기능 구현...-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="글이 작성되면 보이는 구간"
-                android:layout_margin="15dp"/>
-
-        </LinearLayout>
-
-    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/floatingBtn"
