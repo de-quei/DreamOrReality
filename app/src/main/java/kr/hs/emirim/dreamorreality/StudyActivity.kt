@@ -72,10 +72,16 @@ class StudyActivity : ComponentActivity() {
                 val content = jsonObject.getString("content")
 
                 // 가져온 데이터로 UI 업데이트
-                val textView = TextView(this)
+                val inflater = layoutInflater
+                val itemView = inflater.inflate(R.layout.list_item_layout, null)
 
-                val itemText = "제목: $title\n내용: $content"
-                adapter.add(itemText)
+                val textTitle = itemView.findViewById<TextView>(R.id.textTitle)
+                val textContent = itemView.findViewById<TextView>(R.id.textContent)
+
+                textTitle.text = "제목: $title"
+                textContent.text = "내용: $content"
+
+                listView.addHeaderView(itemView) // 리스트뷰에 추가
             }
         } catch (e: JSONException) {
             Log.e("JSONError", "JSON 파싱 오류: $response")
