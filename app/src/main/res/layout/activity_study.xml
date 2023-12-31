@@ -45,36 +45,31 @@
         android:layout_margin="15dp"
         android:gravity="center">
 
-        <ImageButton
-            android:id="@+id/home_btn"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/default_home"/>
 
-        <ImageButton
-            android:id="@+id/study_btn"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/focus_study"
-            android:layout_marginLeft="30dp"/>
+            android:src="@drawable/default_study"
+            android:layout_marginLeft="45dp"/>
 
-        <ImageButton
-            android:id="@+id/chat_btn"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/default_chat"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"/>
+            android:src="@drawable/focus_chat"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"/>
 
-        <ImageButton
-            android:id="@+id/daily_btn"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/default_daily"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="45dp"/>
 
-        <ImageButton
-            android:id="@+id/mypage_btn"
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/default_mypage"/>
