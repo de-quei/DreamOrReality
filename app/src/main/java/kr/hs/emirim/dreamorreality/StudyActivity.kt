@@ -70,6 +70,7 @@ class StudyActivity : ComponentActivity() {
                 // JSON 객체에서 데이터 추출
                 val title = jsonObject.getString("title")
                 val content = jsonObject.getString("content")
+                val tag = jsonObject.getString("tag")
 
                 // 가져온 데이터로 UI 업데이트
                 val inflater = layoutInflater
@@ -77,9 +78,11 @@ class StudyActivity : ComponentActivity() {
 
                 val textTitle = itemView.findViewById<TextView>(R.id.textTitle)
                 val textContent = itemView.findViewById<TextView>(R.id.textContent)
+                val textTag = itemView.findViewById<TextView>(R.id.textTag)
 
                 textTitle.text = "제목: $title"
                 textContent.text = "내용: $content"
+                textTag.text ="$tag"
 
                 listView.addHeaderView(itemView) // 리스트뷰에 추가
             }

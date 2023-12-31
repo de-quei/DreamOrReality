@@ -24,4 +24,13 @@
         android:text="contents"
         android:textColor="#8E8E8F"/>
 
+    <TextView
+        android:id="@+id/textTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="contents"
+        android:textColor="#8E8E8F"/>
+
 </LinearLayout>
