@@ -68,6 +68,7 @@ class StudyActivity : ComponentActivity() {
 
                 // 가져온 데이터로 UI 업데이트
                 val textView = TextView(this)
+
                 textView.text = "제목: $title\n태그: $tag\n 내용: $content\n 기간: $period\n 인원: $people\n 제한사항: $limit\n\n"
                 // LinearLayout에 TextView 추가
                 findViewById<LinearLayout>(R.id.contentLayout).addView(textView)

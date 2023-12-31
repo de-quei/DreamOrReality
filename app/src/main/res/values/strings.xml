@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">DreamOrReality</string>
     <string name="title_activity_signin">SigninActivity</string>
+    <string name="title_activity_study">StudyActivity</string>
     <string name="title_activity_study_write">StudyWriteActivity</string>
 
     <string-array name="gender_array">

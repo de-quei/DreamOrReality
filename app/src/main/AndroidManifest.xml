@@ -20,11 +20,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.DreamOrReality">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SignUpActivity"
@@ -35,7 +31,8 @@
             android:name=".StudyActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DreamOrReality"></activity>
+            android:theme="@style/Theme.Fab">
+        </activity>
         <activity
             android:name=".HomeActivity"
             android:exported="true"
@@ -43,9 +40,15 @@
             android:theme="@style/Theme.DreamOrReality"></activity>
         <activity
             android:name=".StudyWriteActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_study_write"
-            android:theme="@style/Theme.DreamOrReality" />
+            android:theme="@style/Theme.DreamOrReality" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

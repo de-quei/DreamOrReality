@@ -14,6 +14,7 @@
         android:layout_margin="15dp"/>
 
     <!--body가 될 ScrollView-->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,8 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:text="게시글 제목"
-                android:textSize="20dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/studyWriteTitle"
@@ -60,29 +61,29 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:text="게시글 내용"
-                android:textSize="20dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/studyWriteContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="160dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="15dp"
-                android:padding="15dp"
                 android:background="@drawable/edittext_round_style"
+                android:gravity="top"
                 android:hint="게시글 내용을 입력해 주세요."
-                android:gravity="top"/>
+                android:minHeight="160dp"
+                android:padding="15dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:text="모집 기간"
-                android:textSize="20dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -121,8 +122,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:text="인원"
-                android:textSize="20dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
             <Spinner
                 android:id="@+id/peopleSpinner"
